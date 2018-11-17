@@ -16,7 +16,7 @@
  }
  if(event.target.dataset.elem == 3){
   document.querySelector('.modal').classList.add('hide');
-  alert('hellow');
+  alert('hello');
 
 
       } 
