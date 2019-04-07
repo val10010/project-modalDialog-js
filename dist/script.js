@@ -1,29 +1,33 @@
 (function() {
-  const buttonTop = document.querySelector('.ButtonTop');
-  const elem = document.querySelectorAll('[data-elem]');
-  buttonTop.addEventListener('click', runPopup);
-  function runPopup(event) {
+  let wrapper = document.querySelector('.wrapper');
+
+  wrapper.addEventListener('click' , handleAction); 
+
+  function handleAction(event) {
+    let elem = event.target.dataset.action;
     const modal = document.querySelector('.modal');
-    modal.classList.remove('hide');
+    const bg = document.querySelector('.bg');
 
+    if(elem !== 'open' && elem !== 'close' && elem !== 'uninstall') return;
+
+      if(elem === 'open') {
+        modal.classList.remove('hide'); 
+        bg.classList.remove('hide');
+      }
+
+      if(elem === 'close') {
+        modal.classList.add('hide');
+        bg.classList.add('hide');
+      }
+
+      if(elem === 'uninstall') {
+        modal.classList.add('hide');
+        bg.classList.add('hide');
+        setTimeout(function() {
+          alert('DONE')
+        }, 200)
+       
+      }
   }
-  console.log(elem);
-  for(let i=0; i<elem.length; i++){
-    elem[i].addEventListener('click', closeBlock);
-    function closeBlock (event){
- if(event.target.dataset.elem == 1) {
- document.querySelector('.modal').classList.add('hide');
- }
- if(event.target.dataset.elem == 3){
-  document.querySelector('.modal').classList.add('hide');
-  alert('hellow');
-
-
-      } 
-    }
-  }
-
-
-
 
 })();

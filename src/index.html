@@ -6,41 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
-    <title>Document</title>
+    <title>Modal dialog window</title>
   </head>
   <body>
-      <div class="ButtonTop">
-        <button class="ButtonTop-elem">
-        run  popup
-        </button>
-      </div>
-      <div class="modal hide " data-elem="1">
-        <div class="modal-elem">
-          <div class="modal-elem__close">
-            <img src="img/icon-popup-close.svg" alt="close" data-elem="1" />
-          </div>
-          <div class="modal-container">
-            <div>
-              <img
-                src="img/icon-warning_notify-red.svg"
-                class="modal-container__img"
-                alt="warning"
-              />
+    <div class="wrapper">
+      <button class="button-run" data-action="open">run popup</button>
+      <div class="bg hide" data-action="close"></div>
+      <div class="modal hide">
+        <div class="modal__close">
+            <img src="img/icon-popup-close.svg" alt="close"  data-action="close"/>
+        </div>
+        <div class="info-container">
+            <div class="modal__icon">
+              <img src="img/icon-warning_notify-red.svg" class="img" alt="attention">
             </div>
-            <div class="modal-container__h2">
-              <h2>Are you sure you want to unistal the Shazam app</h2>
+            <div class="modal__title">
+              <h2>Are you sure you want to uninstall the Shazam app</h2>
             </div>
-            <div class="modal-container__elem">
-              <button class="modal-container__elem__left" data-elem="1">
-                Cancel
-              </button>
-              <button class="modal-container__elem__right" data-elem="3">
-                Unistal
-              </button>
-            </div>
-          </div>
+        </div>
+        <div class="button">
+            <button class="button__cancel" data-action="close">Cancel</button>
+            <button class="button__uninstall" data-action="uninstall">Uninstall</button>
         </div>
       </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
